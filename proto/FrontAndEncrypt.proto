@@ -1,0 +1,32 @@
+syntax = "proto3";
+package FrontAndEncrypt;
+
+
+message FAEPackage{
+    
+    enum PackageState{
+        USER_INFO =0;
+        RECEIVE_INFO =1;
+        LOGIN =2;
+        FILE_INFO=3;    
+    }
+    enum LoginState{
+        SUCCESS=0;
+        PASSWORD_ERROR=1;
+        USERNAME_ERROR=2;
+        CONNECT_ERROR=3;
+        OTHER_ERROR=4;
+    }
+    PackageState Package=1;
+    
+    optional LoginState login=2;
+    
+    optional string UserName=3;//USER_INFO;
+    optional string Password=4;
+
+    optional ReceName=5;//receive Name;
+
+    optional string FileAddr 6;//file address;
+
+}
+

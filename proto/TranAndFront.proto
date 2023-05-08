@@ -1,0 +1,11 @@
+syntax = "proto3";
+package TranAndFront;
+
+message TAFPackage{
+    string ServerIp=1;
+    string ServerPort=2;
+    optional int32 completed=3;//rate of process
+    optional int32 all=4
+}
+
+

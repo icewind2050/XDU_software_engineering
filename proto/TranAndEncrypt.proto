@@ -1,0 +1,29 @@
+syntax = "proto3";
+package TranAndEncrypt;
+
+
+message TAEPackage{
+    enum packageState{
+        ReceUserName =0;
+        Login =1;
+        ECCPublic=2;
+        AESScreat=3;
+        FileInfo=4;
+    }
+    packageState state =1;
+    optional string encryReceName=2;//ReceUserName
+
+
+    optional string encryUserName=3;//Login information
+    optional string encryUserPass=4;
+
+
+    optional string ClientPublicSecret=5;//ECCPublic
+    optional string ServerPublicSecret=6;
+    
+    optional string encryAES=7;//AES Screat;
+    
+    
+    optional string FileAddr=8;//cryptographic file
+    
+}
